@@ -92,7 +92,11 @@ class Przsalecountdown extends Module implements WidgetInterface
         if (!$this->active) {
             return;
         }
-        
+
+        if ($configuration['product'] && $configuration['product']['specific_prices'] === false) {
+            return;
+        }
+
         $this->smarty->assign($this->getWidgetVariables($hookName, $configuration));
 
         return $this->fetch('module:'.$this->name.'/views/templates/widget/widget.tpl');

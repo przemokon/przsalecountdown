@@ -48,7 +48,7 @@ var saleCountdown = {
 
   init() {
     this.getPromoEndDate();
-
+    
     var clock = $("#" + this.selector);
     var days = $(clock).find(".js-days");
     var hours = $(clock).find(".js-hours");
@@ -83,6 +83,6 @@ var saleCountdown = {
   },
 };
 
-if ($('#' + saleCountdown.selector)) {
+if ($('#' + saleCountdown.selector).length) {
   saleCountdown.init();
 }

@@ -89,6 +89,10 @@ class Przsalecountdown extends Module implements WidgetInterface
 
     public function renderWidget($hookName, array $configuration)
     {
+        if (!$this->active) {
+            return;
+        }
+        
         $this->smarty->assign($this->getWidgetVariables($hookName, $configuration));
 
         return $this->fetch('module:'.$this->name.'/views/templates/widget/widget.tpl');

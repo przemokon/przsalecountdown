@@ -38,7 +38,7 @@ class Przsalecountdown extends Module implements WidgetInterface
     {
         $this->name = 'przsalecountdown';
         $this->tab = 'advertising_marketing';
-        $this->version = '1.0.1';
+        $this->version = '1.0.2';
         $this->author = 'Przemysław Okoniewski';
         $this->need_instance = 0;
 

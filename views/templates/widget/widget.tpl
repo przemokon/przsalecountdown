@@ -1,4 +1,4 @@
-{if $product.specific_price.to}
+{if $product.specific_prices.to}
   <div id="saleCountdown" class="mb-2" data-promo-end="{$product.specific_prices.to}">
     <p class="h4 font-weight-light mb-2">{l s='Sale ends in' mod='przsalecountdown'}:</p>
 

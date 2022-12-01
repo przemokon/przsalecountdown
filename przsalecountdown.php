@@ -38,7 +38,7 @@ class Przsalecountdown extends Module implements WidgetInterface
     {
         $this->name = 'przsalecountdown';
         $this->tab = 'advertising_marketing';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
         $this->author = 'Przemysław Okoniewski';
         $this->need_instance = 0;
 
@@ -95,6 +95,13 @@ class Przsalecountdown extends Module implements WidgetInterface
 
         if ($configuration['product'] && $configuration['product']['specific_prices'] === false) {
             return;
+        }
+
+        $timerEnd = $configuration['product']['specific_prices']['to'];
+        $now = date('Y-m-d H:i:s');
+
+        if ($now > $timerEnd) {
+            return false;
         }
 
         $this->smarty->assign($this->getWidgetVariables($hookName, $configuration));
